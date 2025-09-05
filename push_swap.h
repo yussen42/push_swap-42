@@ -6,7 +6,7 @@
 /*   By: yussen <yussen@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/31 17:42:30 by yussen            #+#    #+#             */
-/*   Updated: 2025/09/05 03:14:53 by yussen           ###   ########.fr       */
+/*   Updated: 2025/09/05 07:04:36 by yussen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 // 	struct s_stack_list		*next;
 // }	t_stack_list;
 
-void			swap_a(int *stack_a);
+void			swap_a(t_stack_list *stack_a);
 void			swap_b(int *stack_b);
 void			swap_ab(int *stack_a, int *stack_b);
 int				is_valid(char *str);

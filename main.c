@@ -6,7 +6,7 @@
 /*   By: yussen <yussen@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 19:47:42 by yussen            #+#    #+#             */
-/*   Updated: 2025/09/05 03:59:02 by yussen           ###   ########.fr       */
+/*   Updated: 2025/09/05 07:06:24 by yussen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,6 @@ int main(int ac, char **av)
 	stack_b = NULL;
 	if (!stack_a)
 		return (1);
+	swap_a(stack_a);
+	printf("%d", stack_a->next->content);
 }
