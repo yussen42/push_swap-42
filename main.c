@@ -6,7 +6,7 @@
 /*   By: yussen <yussen@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 19:47:42 by yussen            #+#    #+#             */
-/*   Updated: 2025/08/31 17:38:18 by yussen           ###   ########.fr       */
+/*   Updated: 2025/09/05 03:59:02 by yussen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,21 +15,26 @@
 
 int main(int ac, char **av)
 {
-	int *a;
-	int *b;
+	t_stack_list *stack_a;
+	t_stack_list *stack_b;
+	char	**temp;
+	char	*nmbrs;
 	int	i;
-	
-	i = 0;
-	a = malloc(sizeof(int) * ac - 1);
-	if (!a)
-		return (1);
-	
-	while (i < ac -1)
+
+	nmbrs = NULL;
+	if (ac == 2)
+		temp = ft_split(&av[1][0], ' '); //çift tırnak değilde normal şekilde bir argüman verirse ne yapacak o durumuda fixlemek gerek
+	else if (ac > 2)
 	{
-		a[i] = atoi(&av[i + 1][0]);
-		i++;
+		nmbrs = ft_strjoinws(ac - 1,  &av[1], " ");
+		temp = ft_split(nmbrs, ' ');
+		free (nmbrs);
 	}
-	swap_a(a);
-	printf("1: %d\n 2: %d", a[0], a[1]);
-	
+	else
+		return (1);
+	i = 0;
+	stack_a = init_stack_a(temp);
+	stack_b = NULL;
+	if (!stack_a)
+		return (1);
 }
