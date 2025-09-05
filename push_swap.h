@@ -6,7 +6,7 @@
 /*   By: yussen <yussen@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/31 17:42:30 by yussen            #+#    #+#             */
-/*   Updated: 2025/09/05 07:04:36 by yussen           ###   ########.fr       */
+/*   Updated: 2025/09/05 07:45:46 by yussen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,6 @@ int				is_valid(char *str);
 char			*ft_strjoinws(int size, char **strs, char *sep);
 int				size_arg(char **str);
 t_stack_list	*init_stack_a(char **temp);
+void			rotate_a(t_stack_list *stack_a);
 
 #endif

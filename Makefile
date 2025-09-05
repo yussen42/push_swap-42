@@ -13,6 +13,7 @@ SRC =	main.c\
 		utils.c\
 		init_stack_a.c\
 		swap_a.c\
+		rotate_a.c\
 
 OBJ = $(SRC:.c=.o)
 
