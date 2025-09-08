@@ -5,7 +5,7 @@ CC = cc
 LIBFT_DIR = ./libft
 LIBFT = $(LIBFT_DIR)/libft.a
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -g
 
 SRC =	main.c\
 		is_valid.c\
@@ -14,6 +14,7 @@ SRC =	main.c\
 		init_stack_a.c\
 		swap_a.c\
 		rotate_a.c\
+		reverse_rotate_a.c\
 
 OBJ = $(SRC:.c=.o)
 
