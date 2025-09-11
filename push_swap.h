@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yussen <yussen@student.42istanbul.com.t    +#+  +:+       +#+        */
+/*   By: yussen <yussen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/31 17:42:30 by yussen            #+#    #+#             */
-/*   Updated: 2025/09/11 17:57:25 by yussen           ###   ########.fr       */
+/*   Updated: 2025/09/11 23:32:48 by yussen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,8 @@ t_stack_list	*init_stack_a(char **temp);
 void			rotate_a(t_stack_list *stack_a);
 void			reverse_rotate_a(t_stack_list *stack_a);
 int				check_error(char **str);
+int				ft_strcmp(char *s1, char *s2);
+void			ft_free(char **str);
+long			ft_atol(const char *nptr);
 
 #endif

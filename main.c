@@ -3,21 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yussen <yussen@student.42istanbul.com.t    +#+  +:+       +#+        */
+/*   By: yussen <yussen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 19:47:42 by yussen            #+#    #+#             */
-/*   Updated: 2025/09/11 19:17:38 by yussen           ###   ########.fr       */
+/*   Updated: 2025/09/11 23:40:46 by yussen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <stdio.h>
 
-// is_duplicate, 3'lu siralama, hiç girdi yoksa hiçbir şey yapmama, push'lar, kuralların sa gibi şeylerini yazdırmak max,min int
+// 3'lu siralama, push'lar, kuralların sa gibi şeylerini yazdırmak
 int main(int ac, char **av)
 {
 	t_stack_list *stack_a;
-	t_stack_list *stack_b;
 	char	**temp;
 	char	*nmbrs;
 
@@ -36,7 +35,6 @@ int main(int ac, char **av)
 	if (check_error(temp))
 		return(1);
 	stack_a = init_stack_a(temp);
-	stack_b = NULL;
 	if (!stack_a)
 		return (1);
 }
