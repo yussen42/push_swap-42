@@ -6,13 +6,14 @@
 /*   By: yussen <yussen@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 19:47:42 by yussen            #+#    #+#             */
-/*   Updated: 2025/09/11 18:25:24 by yussen           ###   ########.fr       */
+/*   Updated: 2025/09/11 19:17:38 by yussen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <stdio.h>
 
+// is_duplicate, 3'lu siralama, hiç girdi yoksa hiçbir şey yapmama, push'lar, kuralların sa gibi şeylerini yazdırmak max,min int
 int main(int ac, char **av)
 {
 	t_stack_list *stack_a;
