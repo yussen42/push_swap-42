@@ -6,14 +6,14 @@
 /*   By: yussen <yussen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 19:47:42 by yussen            #+#    #+#             */
-/*   Updated: 2025/09/11 23:40:46 by yussen           ###   ########.fr       */
+/*   Updated: 2025/09/12 00:19:04 by yussen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <stdio.h>
 
-// 3'lu siralama, push'lar, kuralların sa gibi şeylerini yazdırmak
+// 3'lu siralama, push'lar
 int main(int ac, char **av)
 {
 	t_stack_list *stack_a;

@@ -3,33 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   swap_ab.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yussen <yussen@student.42istanbul.com.t    +#+  +:+       +#+        */
+/*   By: yussen <yussen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/31 18:41:58 by yussen            #+#    #+#             */
-/*   Updated: 2025/08/31 18:44:55 by yussen           ###   ########.fr       */
+/*   Updated: 2025/09/12 00:12:37 by yussen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "push_swap.h"
+
 void	swap_ab(int *stack_a, int *stack_b)
 {
-	int	temp;
-
-	temp = 0;
-
-	if (stack_a[1])
-	{
-		temp = stack_a[0];
-		stack_a[0] = stack_a[1];
-		stack_a[1] = temp;
-	}
-
-	if (stack_b[1])
-	{
-		temp = stack_b[0];
-		stack_b[0] = stack_b[1];
-		stack_b[1] = temp;
-	}
-
+	swap_a(stack_a, 0);
+	swap_b(stack_b, 0);
 	write(1, "ss\n", 3);
-	return ;
 }

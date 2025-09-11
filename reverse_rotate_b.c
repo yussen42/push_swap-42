@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   reverse_rotate_b.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yussen <yussen@student.42istanbul.com.t    +#+  +:+       +#+        */
+/*   By: yussen <yussen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/08 17:41:13 by yussen            #+#    #+#             */
-/*   Updated: 2025/09/08 17:44:18 by yussen           ###   ########.fr       */
+/*   Updated: 2025/09/12 00:16:13 by yussen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	reverse_rotate_b(t_stack_list *stack_b)
+void	reverse_rotate_b(t_stack_list *stack_b, int flag)
 {
 	int				size;
 	int				i;
@@ -30,5 +30,6 @@ void	reverse_rotate_b(t_stack_list *stack_b)
 	}
 	ft_lstadd_back(&stack_b, last);
 	temp->next = NULL;
-	write(1, "rrb\n", 4);
+	if (flag)
+		write(1, "rrb\n", 4);
 }

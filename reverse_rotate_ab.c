@@ -1,30 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap_a.c                                           :+:      :+:    :+:   */
+/*   reverse_rotate_ab.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yussen <yussen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/31 17:42:26 by yussen            #+#    #+#             */
-/*   Updated: 2025/09/12 00:04:57 by yussen           ###   ########.fr       */
+/*   Created: 2025/09/12 00:16:34 by yussen            #+#    #+#             */
+/*   Updated: 2025/09/12 00:17:50 by yussen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	swap_a(t_stack_list *stack_a, int flag)
+void	reverse_rotate_ab(t_stack_list *stack_a, t_stack_list *stack_b)
 {
-	int	temp;
-
-	temp = 0;
-
-	if (!stack_a->next)
-		return ;
-
-	temp = stack_a->content;
-	stack_a->content = stack_a->next->content;
-	stack_a->next->content = temp;
-	if (flag)
-		write(1, "sa\n", 3);
-	return ;
+	reverse_rotate_a(stack_a, 0);
+	reverse_rotate_b(stack_b, 0);
+	write(1, "rrr\n", 4);
 }

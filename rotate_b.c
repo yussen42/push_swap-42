@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   rotate_b.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yussen <yussen@student.42istanbul.com.t    +#+  +:+       +#+        */
+/*   By: yussen <yussen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/05 07:48:14 by yussen            #+#    #+#             */
-/*   Updated: 2025/09/05 07:51:02 by yussen           ###   ########.fr       */
+/*   Updated: 2025/09/12 00:10:53 by yussen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	rotate_b(t_stack_list *stack_b)
+void	rotate_b(t_stack_list *stack_b, int flag)
 {
 	int	i;
 	int	first;
@@ -30,5 +30,6 @@ void	rotate_b(t_stack_list *stack_b)
 		i++;
 	}
 	stack_b->content = first;
-	write(1, "rb\n", 3);
+	if (flag)
+		write(1, "rb\n", 3);
 }

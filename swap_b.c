@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   swap_b.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yussen <yussen@student.42istanbul.com.t    +#+  +:+       +#+        */
+/*   By: yussen <yussen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/31 17:42:23 by yussen            #+#    #+#             */
-/*   Updated: 2025/09/05 07:08:24 by yussen           ###   ########.fr       */
+/*   Updated: 2025/09/12 00:06:41 by yussen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	swap_b(t_stack_list *stack_b)
+void	swap_b(t_stack_list *stack_b, int flag)
 {
 	int	temp;
 
@@ -24,6 +24,7 @@ void	swap_b(t_stack_list *stack_b)
 	temp = stack_b->content;
 	stack_b->content = stack_b->next->content;
 	stack_b->next->content = temp;
-	write(1, "sb\n", 3);
+	if (flag)
+		write(1, "sb\n", 3);
 	return ;
 }
