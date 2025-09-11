@@ -6,7 +6,7 @@
 /*   By: yussen <yussen@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/31 17:42:30 by yussen            #+#    #+#             */
-/*   Updated: 2025/09/08 16:55:43 by yussen           ###   ########.fr       */
+/*   Updated: 2025/09/11 17:57:25 by yussen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,11 @@
 void			swap_a(t_stack_list *stack_a);
 void			swap_b(int *stack_b);
 void			swap_ab(int *stack_a, int *stack_b);
-int				is_valid(char *str);
 char			*ft_strjoinws(int size, char **strs, char *sep);
 int				size_arg(char **str);
 t_stack_list	*init_stack_a(char **temp);
 void			rotate_a(t_stack_list *stack_a);
 void			reverse_rotate_a(t_stack_list *stack_a);
+int				check_error(char **str);
 
 #endif

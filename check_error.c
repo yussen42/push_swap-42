@@ -1,41 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   check_error.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yussen <yussen@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/26 19:47:42 by yussen            #+#    #+#             */
-/*   Updated: 2025/09/11 18:25:24 by yussen           ###   ########.fr       */
+/*   Created: 2025/09/11 16:33:06 by yussen            #+#    #+#             */
+/*   Updated: 2025/09/11 18:58:17 by yussen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <stdio.h>
 
-int main(int ac, char **av)
+int	check_error(char **str)
 {
-	t_stack_list *stack_a;
-	t_stack_list *stack_b;
-	char	**temp;
-	char	*nmbrs;
+	int	i;
+	int	j;
 
-
-	nmbrs = NULL;
-	if (ac == 2)
-		temp = ft_split(&av[1][0], ' ');
-	else if (ac > 2)
+	i = 0;
+	while (str[i])
 	{
-		nmbrs = ft_strjoinws(ac - 1,  &av[1], " ");
-		temp = ft_split(nmbrs, ' ');
-		free (nmbrs);
+		j = 0;
+		while(str[i][j])
+		{
+			if (!(str[i][j] >= '0' && str[i][j] <= '9') && (str[i][j] != '\0'))
+			{
+				i = 0;
+				while(str[i])
+				{
+					free(str[i]);
+					i++;
+				}
+				free(str);
+				write(1, "Error\n", 6);
+				return(1);
+			}
+			j++;
+		}
+		i++;
 	}
-	else
-		return (1);
-	if (check_error(temp))
-		return(1);
-	stack_a = init_stack_a(temp);
-	stack_b = NULL;
-	if (!stack_a)
-		return (1);
+	return (0);
 }

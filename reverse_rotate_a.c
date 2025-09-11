@@ -6,13 +6,12 @@
 /*   By: yussen <yussen@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/08 16:05:19 by yussen            #+#    #+#             */
-/*   Updated: 2025/09/08 17:16:03 by yussen           ###   ########.fr       */
+/*   Updated: 2025/09/08 17:44:23 by yussen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
-// 1 2 3 4 5 -> 5 1 2 3 4
+
 void	reverse_rotate_a(t_stack_list *stack_a)
 {
 	int				size;
@@ -30,7 +29,6 @@ void	reverse_rotate_a(t_stack_list *stack_a)
 		i++;
 	}
 	ft_lstadd_front(&stack_a, last);
-	temp -> next = NULL;
-	
-	
+	temp->next = NULL;
+	write(1, "rra\n", 4);	
 }

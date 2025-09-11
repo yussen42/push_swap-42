@@ -1,27 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   is_valid.c                                         :+:      :+:    :+:   */
+/*   reverse_rotate_b.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yussen <yussen@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/04 22:34:52 by yussen            #+#    #+#             */
-/*   Updated: 2025/09/05 00:22:39 by yussen           ###   ########.fr       */
+/*   Created: 2025/09/08 17:41:13 by yussen            #+#    #+#             */
+/*   Updated: 2025/09/08 17:44:18 by yussen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	is_valid(char *str)
+#include "push_swap.h"
+
+void	reverse_rotate_b(t_stack_list *stack_b)
 {
-	int	i;
-	
-	i = 0;
-	if (!str || !*str)
-		return 0;
-	while(str[i])
+	int				size;
+	int				i;
+	t_stack_list	*temp;
+	t_stack_list	*last;
+
+	i = 1;
+	size = ft_lstsize(stack_b);
+	temp = stack_b;
+	last = ft_lstlast(stack_b);
+	while (i < size -1)
 	{
-		if (!(str[i] >= '0' && str[i] <= '9'))
-			return (0);
+		temp = temp->next;
 		i++;
 	}
-	return (1);
+	ft_lstadd_back(&stack_b, last);
+	temp->next = NULL;
+	write(1, "rrb\n", 4);
 }
