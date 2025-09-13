@@ -15,6 +15,8 @@ SRC =	main.c\
 		rotate_a.c\
 		reverse_rotate_a.c\
 		check_error.c\
+		if_len_three.c\
+		push_b.c\
 
 OBJ = $(SRC:.c=.o)
 

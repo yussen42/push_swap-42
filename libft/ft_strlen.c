@@ -6,13 +6,13 @@
 /*   By: yussen <yussen@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 18:22:48 by yussen            #+#    #+#             */
-/*   Updated: 2025/06/21 13:54:29 by yussen           ###   ########.fr       */
+/*   Updated: 2025/09/12 22:06:02 by yussen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+ssize_t	ft_strlen(const char *s)
 {
 	size_t	i;
 

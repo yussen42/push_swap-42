@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yussen <yussen@student.42.fr>              +#+  +:+       +#+        */
+/*   By: yussen <yussen@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/04 23:16:23 by yussen            #+#    #+#             */
-/*   Updated: 2025/09/11 23:32:41 by yussen           ###   ########.fr       */
+/*   Updated: 2025/09/12 23:38:19 by yussen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,17 +49,15 @@ void	ft_free(char **str)
 	free(str);
 }
 
-long	ft_atol(const char *nptr)
+ssize_t	ft_atoi_error_check(const char *nptr)
 {
-	long	i;
-	long	sign;
-	long	res;
+	ssize_t	i;
+	ssize_t	sign;
+	ssize_t	res;
 
 	i = 0;
 	sign = 1;
 	res = 0;
-	while ((nptr[i] >= 9 && nptr[i] <= 13) || (nptr[i] == ' '))
-		i++;
 	if (nptr[i] == '+' || nptr[i] == '-')
 	{
 		if (nptr[i] == '-')
@@ -71,5 +69,10 @@ long	ft_atol(const char *nptr)
 		res = (res * 10) + (nptr[i] - '0');
 		i++;
 	}
-	return (res * sign);
+	if ((sign == 1 && res > 2147483647) || ft_strlen(nptr) >= 10)
+		return (1);
+	else if (((sign == -1) && -(res) < -2147483648) || ft_strlen(nptr) >= 11)
+		return (1);
+	else
+		return (0);
 }

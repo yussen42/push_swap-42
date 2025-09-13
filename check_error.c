@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_error.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yussen <yussen@student.42.fr>              +#+  +:+       +#+        */
+/*   By: yussen <yussen@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/11 16:33:06 by yussen            #+#    #+#             */
-/*   Updated: 2025/09/11 23:42:36 by yussen           ###   ########.fr       */
+/*   Updated: 2025/09/12 23:45:52 by yussen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,13 +50,13 @@ static int	is_numeric(char **str)
 	while (str[i])
 	{
 		j = 0;
-		while(str[i][j])
+		while (str[i][j])
 		{
 			if (!(str[i][j] >= '0' && str[i][j] <= '9') && (str[i][j] != '-'))
 			{
 				ft_free(str);
 				write(2, "Error\n", 6);
-				return(1);
+				return (1);
 			}
 			j++;
 		}
@@ -67,7 +67,7 @@ static int	is_numeric(char **str)
 
 static int	is_empty(char **str)
 {
-	if(str[0] == NULL)
+	if (str[0] == NULL)
 	{
 		ft_free(str);
 		write(1, "Error\n", 6);
@@ -84,7 +84,7 @@ static int	is_max_or_min_int(char **str)
 	i = 0;
 	while (str[i])
 	{
-		if (ft_atol(str[i]) > 2147483647 || ft_atol(str[i]) < -2147483648)
+		if (ft_atoi_error_check(str[i]))
 		{
 			ft_free(str);
 			write(2, "Error\n", 6);
@@ -92,8 +92,9 @@ static int	is_max_or_min_int(char **str)
 		}
 		i++;
 	}
-	return(0);
+	return (0);
 }
+
 int	check_error(char **str)
 {
 	int	i;
@@ -112,5 +113,4 @@ int	check_error(char **str)
 		return (1);
 	else
 		return (0);
-
 }
