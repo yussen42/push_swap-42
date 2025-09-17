@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear_bonus.c                                :+:      :+:    :+:   */
+/*   push_a.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yussen <yussen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/22 20:37:54 by yussen            #+#    #+#             */
-/*   Updated: 2025/09/13 21:09:16 by yussen           ###   ########.fr       */
+/*   Created: 2025/09/13 20:47:28 by yussen            #+#    #+#             */
+/*   Updated: 2025/09/13 20:51:58 by yussen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-void	ft_lstclear(t_stack_list **lst)
+void	push_a(t_stack_list **stack_a, t_stack_list **stack_b, int flag)
 {
 	t_stack_list	*temp;
 
-	if (!lst)
+	if (!(*stack_b))
 		return ;
-	while (*lst)
-	{
-		temp = (*lst)->next;
-		free(*lst);
-		*lst = temp;
-	}
+	temp = *stack_b;
+	*stack_b = (*stack_b)->next;
+	temp->next = NULL;
+	ft_lstadd_front(stack_a, temp);
+	if (flag)
+		write(1, "pa\n", 3);
 }

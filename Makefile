@@ -15,8 +15,14 @@ SRC =	main.c\
 		rotate_a.c\
 		reverse_rotate_a.c\
 		check_error.c\
-		if_len_three.c\
 		push_b.c\
+		push_a.c\
+		find_min.c\
+		find_max.c\
+		logaritma.c\
+		the_algorithm.c\
+		assign_indexes.c\
+		is_sorted.c\
 
 OBJ = $(SRC:.c=.o)
 

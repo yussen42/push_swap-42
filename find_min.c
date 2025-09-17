@@ -1,27 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear_bonus.c                                :+:      :+:    :+:   */
+/*   find_min.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yussen <yussen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/22 20:37:54 by yussen            #+#    #+#             */
-/*   Updated: 2025/09/13 21:09:16 by yussen           ###   ########.fr       */
+/*   Created: 2025/09/14 23:35:25 by yussen            #+#    #+#             */
+/*   Updated: 2025/09/14 23:48:36 by yussen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-void	ft_lstclear(t_stack_list **lst)
+int	find_min(t_stack_list *stack_a)
 {
-	t_stack_list	*temp;
+	int	res;
+	int	i;
+	int	check;
 
-	if (!lst)
-		return ;
-	while (*lst)
+	res = 0;
+	i = 0;
+	check = stack_a->content;
+	while (stack_a->next)
 	{
-		temp = (*lst)->next;
-		free(*lst);
-		*lst = temp;
+		if (check > stack_a->next->content)
+		{
+			check = stack_a->next->content;
+			res = i + 1;
+		}
+		i++;
+		stack_a = stack_a->next;
 	}
+	return (res);
 }

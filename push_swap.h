@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yussen <yussen@student.42istanbul.com.t    +#+  +:+       +#+        */
+/*   By: yussen <yussen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/31 17:42:30 by yussen            #+#    #+#             */
-/*   Updated: 2025/09/12 23:39:10 by yussen           ###   ########.fr       */
+/*   Updated: 2025/09/17 03:39:53 by yussen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void			swap_ab(int *stack_a, int *stack_b);
 char			*ft_strjoinws(int size, char **strs, char *sep);
 int				size_arg(char **str);
 t_stack_list	*init_stack_a(char **temp);
-void			rotate_a(t_stack_list *stack_a, int flag);
+void			rotate_a(t_stack_list **stack_a, int flag);
 void			rotate_b(t_stack_list *stack_b, int flag);
 void			rotate_ab(t_stack_list *stack_a, t_stack_list *stack_b);
 void			reverse_rotate_a(t_stack_list *stack_a, int flag);
@@ -40,6 +40,13 @@ int				ft_strcmp(char *s1, char *s2);
 void			ft_free(char **str);
 ssize_t			ft_atoi_error_check(const char *nptr);
 void			if_len_three(t_stack_list *stack_a);
-void			push_b(t_stack_list *stack_a, t_stack_list *stack_b, int flag);
-
+void			push_b(t_stack_list **stack_a, t_stack_list **stack_b, int flag);
+void			push_a(t_stack_list **stack_a, t_stack_list **stack_b, int flag);
+void            free_stack(t_stack_list **stack);
+int	            find_min(t_stack_list *stack_a);
+int				find_max(t_stack_list *stack_a);
+int             logaritma(int nbr); // ismini ve değişken isimlerini ingilizce yap
+void	        the_algorithm(t_stack_list **stack_a, t_stack_list **stack_b);
+void			assign_indexes(t_stack_list *stack_a); //ufak tefek değişiklikler yapılabilir
+int             is_sorted(t_stack_list *stack);
 #endif

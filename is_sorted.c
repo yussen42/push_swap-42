@@ -1,27 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear_bonus.c                                :+:      :+:    :+:   */
+/*   is_sorted.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yussen <yussen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/22 20:37:54 by yussen            #+#    #+#             */
-/*   Updated: 2025/09/13 21:09:16 by yussen           ###   ########.fr       */
+/*   Created: 2025/09/17 03:15:03 by yussen            #+#    #+#             */
+/*   Updated: 2025/09/17 03:17:29 by yussen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-void	ft_lstclear(t_stack_list **lst)
+int is_sorted(t_stack_list *stack)
 {
-	t_stack_list	*temp;
-
-	if (!lst)
-		return ;
-	while (*lst)
+	while (stack->next)
 	{
-		temp = (*lst)->next;
-		free(*lst);
-		*lst = temp;
+		if (stack->content > stack->next->content)
+			return (0);
+		stack = stack->next;
 	}
+	return (1);
 }

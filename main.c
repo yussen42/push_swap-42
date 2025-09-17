@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yussen <yussen@student.42istanbul.com.t    +#+  +:+       +#+        */
+/*   By: yussen <yussen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 19:47:42 by yussen            #+#    #+#             */
-/*   Updated: 2025/09/13 02:20:25 by yussen           ###   ########.fr       */
+/*   Updated: 2025/09/17 03:35:15 by yussen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,8 @@ int main(int ac, char **av)
 	if (check_error(temp))
 		return(1);
 	stack_a = init_stack_a(temp);
-	push_b(stack_a, stack_b, 1);
-	printf("%d\n", stack_a->next->content);
-	if (!stack_a)
-		return (1);
+	ft_free(temp);
+	assign_indexes(stack_a);
+	the_algorithm(&stack_a, &stack_b);
+
 }

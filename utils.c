@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yussen <yussen@student.42istanbul.com.t    +#+  +:+       +#+        */
+/*   By: yussen <yussen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/04 23:16:23 by yussen            #+#    #+#             */
-/*   Updated: 2025/09/12 23:38:19 by yussen           ###   ########.fr       */
+/*   Updated: 2025/09/13 21:21:58 by yussen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,4 +75,21 @@ ssize_t	ft_atoi_error_check(const char *nptr)
 		return (1);
 	else
 		return (0);
+}
+void free_stack(t_stack_list **stack)
+{
+    t_stack_list *current;
+    t_stack_list *next;
+
+    if (!stack || !*stack)
+        return ;
+
+    current = *stack;
+    while (current)
+    {
+        next = current->next;
+        free(current);
+        current = next;
+    }
+    *stack = NULL;
 }

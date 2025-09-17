@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yussen <yussen@student.42istanbul.com.t    +#+  +:+       +#+        */
+/*   By: yussen <yussen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 13:16:01 by yussen            #+#    #+#             */
-/*   Updated: 2025/09/13 00:37:48 by yussen           ###   ########.fr       */
+/*   Updated: 2025/09/16 13:43:08 by yussen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 typedef struct s_stack_list
 {
 	int						content;
+	int						index;
 	struct s_stack_list		*next;
 }	t_stack_list;
 
@@ -62,6 +63,6 @@ int		ft_lstsize(t_stack_list *lst);
 t_stack_list	*ft_lstlast(t_stack_list *lst);
 void	ft_lstadd_back(t_stack_list **lst, t_stack_list *new);
 void	ft_lstdelone(t_stack_list *lst, void (*del)(void *));
-void	ft_lstclear(t_stack_list **lst, void (*del)(void *));
+void	ft_lstclear(t_stack_list **lst);
 
 #endif
