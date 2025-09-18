@@ -13,7 +13,9 @@ SRC =	main.c\
 		init_stack_a.c\
 		swap_a.c\
 		rotate_a.c\
+		rotate_b.c\
 		reverse_rotate_a.c\
+		reverse_rotate_b.c\
 		check_error.c\
 		push_b.c\
 		push_a.c\
@@ -23,6 +25,7 @@ SRC =	main.c\
 		the_algorithm.c\
 		assign_indexes.c\
 		is_sorted.c\
+		if_len_three.c\
 
 OBJ = $(SRC:.c=.o)
 

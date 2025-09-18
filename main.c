@@ -6,23 +6,35 @@
 /*   By: yussen <yussen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 19:47:42 by yussen            #+#    #+#             */
-/*   Updated: 2025/09/17 03:35:15 by yussen           ###   ########.fr       */
+/*   Updated: 2025/09/18 03:13:43 by yussen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
-//push'lar, sıralanmışmı diye bakma 1 argüman veya 2 argüman girme durumu
-// swap, rotate ve push yanlış ben contentleri değiştiriyorum nodeları değil
-// swap hariç tüm işlemler node değiştiriyor.
+static void	run_all_functions(t_stack_list **stack_a, t_stack_list **stack_b, char **temp)
+{
+	int	size;
+	int chunk_count;
+    int chunk_size;
+
+	size = ft_lstsize(*stack_a);
+	chunk_count = logaritma(size);
+	chunk_size = size / chunk_count;
+
+	ft_free(temp);
+	assign_indexes(*stack_a);
+	the_algorithm(stack_a, stack_b, size, chunk_size);
+	free_stack(stack_a);
+	free_stack(stack_b);
+}
+
 int main(int ac, char **av)
 {
 	t_stack_list *stack_a;
 	t_stack_list *stack_b;
 	char	**temp;
 	char	*nmbrs;
-
 
 	stack_b = NULL;
 	if (ac == 2)
@@ -38,8 +50,6 @@ int main(int ac, char **av)
 	if (check_error(temp))
 		return(1);
 	stack_a = init_stack_a(temp);
-	ft_free(temp);
-	assign_indexes(stack_a);
-	the_algorithm(&stack_a, &stack_b);
-
+	run_all_functions(&stack_a, &stack_b, temp);
+	return (0);
 }
