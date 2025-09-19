@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoinws.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yussen <yussen@student.42istanbul.com.t    +#+  +:+       +#+        */
+/*   By: yussen <yussen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/04 23:16:45 by yussen            #+#    #+#             */
-/*   Updated: 2025/09/05 01:22:23 by yussen           ###   ########.fr       */
+/*   Updated: 2025/09/19 22:55:38 by yussen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ char	*ft_strjoinws(int size, char **strs, char *sep)
 		res[0] = '\0';
 		return (res);
 	}
-	res = malloc(sizeof(char) * strslen(strs, size) * ft_strlen(sep) * (size - 1) + 1);
+	res = malloc(strslen(strs, size) * ft_strlen(sep) * (size - 1) + 1);
 	if (!res)
 		return (NULL);
 	copy_strs_sep(res, strs, sep, size);

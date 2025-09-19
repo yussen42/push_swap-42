@@ -6,7 +6,7 @@
 /*   By: yussen <yussen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/04 23:16:23 by yussen            #+#    #+#             */
-/*   Updated: 2025/09/18 04:07:25 by yussen           ###   ########.fr       */
+/*   Updated: 2025/09/19 23:05:19 by yussen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,20 +76,20 @@ ssize_t	ft_atoi_error_check(const char *nptr)
 	else
 		return (0);
 }
-void free_stack(t_stack_list **stack)
+
+void	free_stack(t_stack_list **stack)
 {
-    t_stack_list *current;
-    t_stack_list *next;
+	t_stack_list	*current;
+	t_stack_list	*next;
 
-    if (!stack || !*stack)
-        return ;
-
-    current = *stack;
-    while (current)
-    {
-        next = current->next;
-        free(current);
-        current = next;
-    }
-    *stack = NULL;
+	if (!stack || !*stack)
+		return ;
+	current = *stack;
+	while (current)
+	{
+		next = current->next;
+		free(current);
+		current = next;
+	}
+	*stack = NULL;
 }

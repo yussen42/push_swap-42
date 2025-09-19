@@ -26,6 +26,8 @@ SRC =	main.c\
 		assign_indexes.c\
 		is_sorted.c\
 		if_len_three.c\
+		the_algorithm_helper.c\
+		split.c\
 
 OBJ = $(SRC:.c=.o)
 

@@ -6,7 +6,7 @@
 /*   By: yussen <yussen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/31 17:42:30 by yussen            #+#    #+#             */
-/*   Updated: 2025/09/18 03:12:55 by yussen           ###   ########.fr       */
+/*   Updated: 2025/09/19 23:41:13 by yussen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,10 @@ void			push_a(t_stack_list **stack_a, t_stack_list **stack_b, int flag);
 void            free_stack(t_stack_list **stack);
 int	            find_min(t_stack_list *stack_a);
 int				find_max(t_stack_list *stack_a);
-int             logaritma(int nbr); // ismini ve değişken isimlerini ingilizce yap
-void	        the_algorithm(t_stack_list **stack_a, t_stack_list **stack_b, int size, int chunk_size);
+int             logaritma(int nbr);
+void	        the_algorithm(t_stack_list **a, t_stack_list **b, int size, int c_s);
 void			assign_indexes(t_stack_list *stack_a); //ufak tefek değişiklikler yapılabilir
 int             is_sorted(t_stack_list *stack);
+void			helper(t_stack_list **a, t_stack_list **b, int *size, int *c_s);
+char			**ft_split(char const *s, char c);
 #endif
