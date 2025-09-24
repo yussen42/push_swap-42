@@ -3,38 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   split.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yussen <yussen@student.42.fr>              +#+  +:+       +#+        */
+/*   By: yussen <yussen@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/19 23:40:40 by yussen            #+#    #+#             */
-/*   Updated: 2025/09/19 23:41:00 by yussen           ###   ########.fr       */
+/*   Updated: 2025/09/20 16:59:04 by yussen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-static int	word_count(char const *s, char c)
-{
-	int	i;
-	int	w_count;
-	int	flag;
-
-	i = 0;
-	w_count = 0;
-	while (s[i])
-	{
-		flag = 0;
-		while (s[i] == c && s[i])
-			i++;
-		while (s[i] != c && s[i])
-		{
-			i++;
-			flag = 1;
-		}
-		if (flag)
-			w_count++;
-	}
-	return (w_count);
-}
 
 static void	*ft_free(char **res, int flag)
 {

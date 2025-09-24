@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   push_b.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yussen <yussen@student.42.fr>              +#+  +:+       +#+        */
+/*   By: yussen <yussen@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/12 14:44:35 by yussen            #+#    #+#             */
-/*   Updated: 2025/09/13 20:51:23 by yussen           ###   ########.fr       */
+/*   Updated: 2025/09/20 18:07:24 by yussen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
 void	push_b(t_stack_list **stack_a, t_stack_list **stack_b, int flag)
 {

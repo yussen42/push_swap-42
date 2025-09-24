@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   the_algorithm.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yussen <yussen@student.42.fr>              +#+  +:+       +#+        */
+/*   By: yussen <yussen@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 13:17:46 by yussen            #+#    #+#             */
-/*   Updated: 2025/09/19 23:08:34 by yussen           ###   ########.fr       */
+/*   Updated: 2025/09/20 17:59:00 by yussen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,6 @@ void	the_algorithm(t_stack_list **a, t_stack_list **b, int size, int c_s)
 {
 	if (size < 6)
 		return (sort_small_list(a, b, size));
-	the_algorithm_helper(a, b, &size, &c_s);
+	helper(a, b, &size, &c_s);
 	push_all_a(a, b);
 }

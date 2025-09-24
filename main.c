@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yussen <yussen@student.42.fr>              +#+  +:+       +#+        */
+/*   By: yussen <yussen@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 19:47:42 by yussen            #+#    #+#             */
-/*   Updated: 2025/09/19 23:40:09 by yussen           ###   ########.fr       */
+/*   Updated: 2025/09/20 18:03:20 by yussen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,17 @@ static void	run_all_functions(t_stack_list **a, t_stack_list **b, char **temp)
 	int	chunk_size;
 
 	size = ft_lstsize(*a);
-	chunk_count = logaritma(size);
+	chunk_count = chunk_count_founder(size);
 	chunk_size = size / chunk_count;
-	ft_free(temp);
+	ft_free_temp(temp);
+	if (is_sorted(*a) || size == 1)
+		return (free_stack(a));
 	assign_indexes(*a);
 	the_algorithm(a, b, size, chunk_size);
 	free_stack(a);
 	free_stack(b);
 }
-//libftden aldığım fonksiyonları bulup utilse ekle ve libft'yi sil
+
 int	main(int ac, char **av)
 {
 	t_stack_list	*stack_a;
@@ -36,8 +38,8 @@ int	main(int ac, char **av)
 	char			*nmbrs;
 
 	stack_b = NULL;
-	if (ac == 2)
-		temp = ft_split(&av[1][0], ' ');
+	if (ac == 2 && word_count(av[1], ' ') > 1)
+		temp = ft_split(av[1], ' ');
 	else if (ac > 2)
 	{
 		nmbrs = ft_strjoinws(ac - 1, &av[1], " ");

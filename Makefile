@@ -2,16 +2,16 @@ NAME = push_swap
 
 CC = cc
 
-LIBFT_DIR = ./libft
-LIBFT = ./libft/libft.a
-
-CFLAGS = -Wall -Wextra -Werror -g
+CFLAGS = -Wall -Wextra -Werror
 
 SRC =	main.c\
 		ft_strjoinws.c\
 		utils.c\
+		utils2.c\
+		utils3.c\
 		init_stack_a.c\
 		swap_a.c\
+		swap_b.c\
 		rotate_a.c\
 		rotate_b.c\
 		reverse_rotate_a.c\
@@ -21,27 +21,24 @@ SRC =	main.c\
 		push_a.c\
 		find_min.c\
 		find_max.c\
-		logaritma.c\
+		chunk_count_founder.c\
 		the_algorithm.c\
 		assign_indexes.c\
 		is_sorted.c\
 		if_len_three.c\
 		the_algorithm_helper.c\
 		split.c\
+		word_count.c\
 
 OBJ = $(SRC:.c=.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJ) $(LIBFT)
-	$(CC) $(OBJ) -L$(LIBFT_DIR) -lft -o $(NAME)
-
-$(LIBFT):
-	make -C $(LIBFT_DIR) all
+$(NAME): $(OBJ)
+	$(CC) $(OBJ) -o $(NAME)
 
 clean:
 	rm -rf $(OBJ)
-	make -C $(LIBFT_DIR) clean
 
 fclean: clean
 	rm -rf $(NAME)
